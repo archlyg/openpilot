@@ -5,8 +5,8 @@ from selfdrive.car import dbc_dict
 from selfdrive.config import Conversions as CV
 
 Ecu = car.CarParams.Ecu
-MIN_ACC_SPEED = 19. * CV.MPH_TO_MS
-PEDAL_HYST_GAP = 3. * CV.MPH_TO_MS
+MIN_ACC_SPEED = 1. * CV.MPH_TO_MS
+PEDAL_HYST_GAP = 1.5 * CV.MPH_TO_MS
 
 class CarControllerParams:
   ACCEL_HYST_GAP = 0.02  # don't change accel command for small oscilalitons within this value
@@ -1386,6 +1386,7 @@ FW_VERSIONS = {
   CAR.LEXUS_NX_TSS2: {
     (Ecu.engine, 0x700, None): [
       b'\x018966378B2100\x00\x00\x00\x00',
+      b'\x018966378G3000\x00\x00\x00\x00',
     ],
     (Ecu.esp, 0x7b0, None): [
       b'\x01F152678221\x00\x00\x00\x00\x00\x00',
@@ -1398,6 +1399,7 @@ FW_VERSIONS = {
     ],
     (Ecu.fwdCamera, 0x750, 0x6d): [
       b'\x028646F78030A0\x00\x00\x00\x008646G2601200\x00\x00\x00\x00',
+      b'\x028646F7803100\x00\x00\x00\x008646G2601400\x00\x00\x00\x00',
     ],
   },
   CAR.LEXUS_NXH: {
